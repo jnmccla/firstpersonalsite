@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "DivineDice";
+}
+
+<h2>Divine Dice</h2>
+
+
+<div>
+    <form id="frm1" action="/action_page.php"></form>
+    <br />
+    <br />
+    Get your fortune told!
+    <form id="frm1" action="/action_page.php">
+        @*<select id="mySelect">
+            <option>Life</option>
+            <option>Love</option>
+            <option>Money</option>
+            <option>Career</option>
+        </select>*@
+        <br><br>
+        <input type="button" onclick="getOption()" value="Submit">
+    </form>
+</div>
+
+
+
+<script>
+function myFunction() {
+    document.getElementById("frm1").submit();
+}
+function getOption() {
+    var obj = document.getElementById("mySelect");
+    var dieone = Math.floor((Math.random() * 6) + 1);
+    var dietwo = Math.floor((Math.random() * 6) + 1);
+    var reddie = Math.floor((Math.random() * 6) + 1);    
+    var fortune;
+    
+    //if (obj.options[obj.selectedIndex].text == 'Life') {
+  
+        fortune = dieone + dietwo + reddie;
+        if (fortune == 3) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Life may seem to be going poorly, but good things will soon rise from the bad."
+        }
+        else if (fortune == 4) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Keep working hard and you'll achieve your goal."
+        }
+        else if (fortune == 5) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Your fate is in your hands. Choose your actions wisely."
+        }
+        else if (fortune == 6 && dieone == 2 && dietwo == 2) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". A few more small steps will reap great rewards."
+        }
+        else if (fortune == 6) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Your life will soon be on the upturn."
+        }
+        else if (fortune == 7) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". You'll soon have good fortune, but be wary of its consequences."
+        }
+        else if (fortune == 8) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". You'll soon have a chance to relax. Your dedication has paid off."
+        }
+        else if (fortune == 9 && dieone == 3 && dietwo == 3) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". This was the best possible outcome. Fate is on your side."
+        }
+        else if (fortune == 9) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Your bad luck now will bring good fortune in the future."
+        }
+        else if (fortune ==10) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Rely on your friends and family to help you reach your goals."
+        }
+        else if (fortune == 11) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Be wary."
+        }
+        else if (fortune == 12 && dieone == 4 && dietwo == 4) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Stay on your current path - it will soon bear good fruit!"
+        }
+        else if (fortune == 12) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Humbleness is key to reach your goals."
+        }
+        else if (fortune == 13) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Good fortune may be hiding in bad omens - but watch your back!"
+        }
+        else if (fortune == 14) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Don't look a gift horse in the mouth. This one may bite!"
+        }
+        else if (fortune == 15 && dieone == 5 && dietwo == 5) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Great things await the self reliant."
+        }
+        else if (fortune == 15) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Learn to trust your instincts or you may fail at your goals."
+        }
+        else if (fortune == 16) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". A little kindness - to yourself and others - goes a long way."
+        }
+        else if (fortune == 17) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". You have the worst luck. Be careful!"
+        }
+        else if (fortune == 18) {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". You will get what you need, but maybe not what you want."
+        }
+        else {
+            document.getElementById("frm1").innerHTML = dieone + '+' + dietwo + '+' + '<span style="color:red;">' + reddie + '</span>' + '=' + fortune + ". Something went wrong."
+        }
+    //}
+    //else {
+    //    document.getElementById("frm1").innerHTML = 'No it did not';
+    //}
+   
+    
+}
+</script>
+
+     

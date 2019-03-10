@@ -1,0 +1,56 @@
+﻿@model PersonalV2.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <h2>Currently having server issues! Check back soon!</h2>
+    <div class="row container">
+        <div class="col-md-6 ">
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Name" })
+
+            @Html.ValidationMessageFor(x => x.Name)
+        </div>
+
+
+        <div class="col-md-6">
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email" })
+
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+
+        <div class="col-md-12">
+            @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Subject" })<br />
+
+            @Html.ValidationMessageFor(x => x.Subject)
+        </div>
+
+        <div class="col-md-12">
+            @Html.TextAreaFor(x => x.Message, new
+   {
+       @class = "form-control",
+       id = "message",
+       rows = "8",
+       placeholder = "Message",
+       title = "Be concise but include all important details"
+   })<br />
+
+            @Html.ValidationMessageFor(x => x.Message)
+        </div>
+
+        <div class="form-group col-md-12">
+            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit" />
+        </div>
+    </div>
+}
+
